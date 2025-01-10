@@ -1,5 +1,17 @@
+import {useEffect, useState} from "react";
+import {categoriesItem} from "../apiRequest/apiRequest.js";
+import {NavLink} from "react-router-dom";
 
 const LayOut = (props) => {
+    const [categories, setCategories] = useState([]);
+
+    useEffect(() => {
+        (async ()=>{
+           let response =  await categoriesItem()
+            setCategories(response)
+        })()
+    }, []);
+
     return (
         <div>
             <div className="navbar shadow  bg-base-100">
@@ -21,29 +33,43 @@ const LayOut = (props) => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                            <li><a>Blogs</a></li>
+                            className="menu flexImportant menu-sm dropdown-content bg-base-100 flex flex-col  rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            <NavLink to={"/"} className="flex my-[10px] flex-col">Home</NavLink>
+                            {
+                                categories.map((category) => {
+                                    return <NavLink to={"/blogCategory/"+category?.id} className="flex my-[10px] flex-col">{category?.name}</NavLink>
+                                })
+                            }
                             <li>
                                 <a>Categories</a>
-                                <ul className="p-2">
-                                    <li><a>Submenu 1</a></li>
-                                    <li><a>Submenu 2</a></li>
-                                </ul>
+                                {
+                                    categories.map((category) => {
+                                        return <NavLink  to={"/blogCategory/"+category?.id} className="flex my-[10px] align-middle  flex-col">{category?.name}</NavLink>
+                                    })
+                                }
                             </li>
 
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">Daily Blog</a>
+                    <NavLink to="/" className="btn btn-ghost text-xl">Daily Blog</NavLink>
                 </div>
-                <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
-                        <li><a>Blogs</a></li>
+                <div className="navbar-center hidden lg:flex ">
+                    <ul className=" menu flexImportant flex align-middle menu-horizontal px-1 ">
+                        <NavLink to={"/"} className="flex mx-[10px] flex-col">Home</NavLink>
+                        {
+                            categories.map((category) => {
+                                return <NavLink to={"/blogCategory/"+category?.id} className="flex mx-[20px]">{category?.name}</NavLink>
+                            })
+                        }
                         <li>
                             <details>
-                                <summary>Categories</summary>
+                                <summary className="cursor-pointer">Categories</summary>
                                 <ul className="p-2">
-                                    <li><a>Submenu 1</a></li>
-                                    <li><a>Submenu 2</a></li>
+                                    {
+                                        categories.map((category) => {
+                                            return <NavLink to={"/blogCategory/"+category?.id}  className="flex flex-col my-[20px]">{category?.name}</NavLink>
+                                        })
+                                    }
 
                                 </ul>
                             </details>
