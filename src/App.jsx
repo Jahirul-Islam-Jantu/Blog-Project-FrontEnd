@@ -1,8 +1,18 @@
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Home from "./pages/Home.jsx";
+import BlogDetail from "./pages/BlogDetail.jsx";
+import PostByCategory from "./pages/PostByCategory.jsx";
 
 const App = () => {
     return (
         <div>
-            <button className="btn btn-warning">Hello, World!</button>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/blogDetails/:ID" element={<BlogDetail />} />
+                    <Route path="/blogCategory/:categoryID" element={<PostByCategory />} />
+                </Routes>
+            </BrowserRouter>
         </div>
     );
 };

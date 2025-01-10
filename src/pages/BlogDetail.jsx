@@ -1,8 +1,10 @@
+import LayOut from "../layout/LayOut.jsx";
+
 const BlogDetail = () => {
     return (
-        <div>
+        <LayOut>
            <h1>Blog Details</h1>
-        </div>
+        </LayOut>
     );
 };
 

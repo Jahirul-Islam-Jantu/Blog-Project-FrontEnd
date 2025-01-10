@@ -1,8 +1,10 @@
+import LayOut from "../layout/LayOut.jsx";
+
 const Home = () => {
     return (
-        <div>
-            <h1>This is Home Page</h1>
-        </div>
+        <LayOut>
+            <h1>This is Home page</h1>
+        </LayOut>
     );
 };
 

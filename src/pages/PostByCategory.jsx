@@ -1,8 +1,10 @@
+import LayOut from "../layout/LayOut.jsx";
+
 const PostByCategory = () => {
     return (
-        <div>
+        <LayOut>
            <h1>Post By Category</h1>
-        </div>
+        </LayOut>
     );
 };
 
