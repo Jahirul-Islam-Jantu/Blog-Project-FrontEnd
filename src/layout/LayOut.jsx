@@ -13,10 +13,10 @@ const LayOut = (props) => {
     }, []);
 
     return (
-        <div>
-            <div className="navbar shadow  bg-base-100">
-                <div className="navbar-start">
-                    <div className="dropdown">
+        <div className="container-fluid ">
+            <div className="navbar shadow fixed top-0 z-[1]  px-[20px] bg-base-100">
+                <div className="navbar-start max-w-[20rem]">
+                    <div className="dropdown ">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +54,7 @@ const LayOut = (props) => {
                     <NavLink to="/" className="btn btn-ghost text-xl">Daily Blog</NavLink>
                 </div>
                 <div className="navbar-center hidden lg:flex ">
-                    <ul className=" menu flexImportant flex align-middle menu-horizontal px-1 ">
+                    <ul className=" menu flexImportant flex align-middle menu-horizontal px-1 z-[1] ">
                         <NavLink to={"/"} className="flex mx-[10px] flex-col">Home</NavLink>
                         {
                             categories.map((category) => {
@@ -64,10 +64,10 @@ const LayOut = (props) => {
                         <li>
                             <details>
                                 <summary className="cursor-pointer">Categories</summary>
-                                <ul className="p-2">
+                                <ul className="flex p-[20px] flex-wrap z-[1] ">
                                     {
                                         categories.map((category) => {
-                                            return <NavLink to={"/blogCategory/"+category?.id}  className="flex flex-col my-[20px]">{category?.name}</NavLink>
+                                            return <NavLink to={"/blogCategory/"+category?.id}  className="flex flex-col flex-wrap my-[10px]   ">{category?.name}</NavLink>
                                         })
                                     }
 

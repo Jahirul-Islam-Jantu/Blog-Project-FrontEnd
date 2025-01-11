@@ -13,3 +13,15 @@ export async function categoriesItem (){
     }
 
 }
+
+export async function blogListItem (){
+    let res =  await axios.get(`${baseURL}/post-newest  `, {})
+
+
+    if (res.status === 200) {
+        return res.data
+    }else {
+        return []
+    }
+
+}

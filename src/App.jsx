@@ -1,6 +1,6 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Home from "./pages/Home.jsx";
-import BlogDetail from "./pages/BlogDetail.jsx";
+import BlogDetail from "./components/BlogDetail.jsx";
 import PostByCategory from "./pages/PostByCategory.jsx";
 
 const App = () => {
