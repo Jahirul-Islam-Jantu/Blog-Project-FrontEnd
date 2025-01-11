@@ -2,10 +2,11 @@ import LayOut from "../layout/LayOut.jsx";
 import BlogList from "../components/BlogList.jsx";
 import {useEffect, useState} from "react";
 import {blogListItem} from "../apiRequest/apiRequest.js";
+import Loader from "../components/Loader.jsx";
 
 const Home = () => {
 
-    const [list, setList] = useState([])
+    const [list, setList] = useState(null)
 
     useEffect(() => {
         (async ()=>{
@@ -16,7 +17,7 @@ const Home = () => {
 
     return (
         <LayOut>
-            <BlogList list={list} setList={setList} />
+            {list === null ? <Loader/>:<BlogList list={list}/>}
         </LayOut>
     );
 };
