@@ -3,7 +3,6 @@ import BlogList from "../components/BlogList.jsx";
 import {useEffect, useState} from "react";
 import {blogListItem} from "../apiRequest/apiRequest.js";
 import Loader from "../components/Loader.jsx";
-import Buttons from "../components/Buttons.jsx";
 
 
 const Home = () => {
@@ -21,7 +20,7 @@ const Home = () => {
         <LayOut>
             {list === null ? <Loader/>:<BlogList list={list}/>}
 
-            <Buttons/>
+
 
         </LayOut>
     );

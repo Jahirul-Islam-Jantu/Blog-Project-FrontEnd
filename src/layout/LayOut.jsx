@@ -36,18 +36,11 @@ const LayOut = (props) => {
                             className="menu flexImportant menu-sm dropdown-content bg-base-100 flex flex-col  rounded-box z-[1] mt-3 w-52 p-2 shadow">
                             <NavLink to={"/"} className="flex my-[10px] flex-col">Home</NavLink>
                             {
-                                categories.map((category) => {
-                                    return <NavLink to={"/blogCategory/"+category?.id} className="flex my-[10px] flex-col">{category?.name}</NavLink>
+                                categories.map((category, index) => {
+                                    return <li key={index.toString()}><NavLink  to={"/blogCategory/"+category?.id} className="flex my-[10px] flex-col">{category?.name}</NavLink></li>
                                 })
                             }
-                            <li>
-                                <a>Categories</a>
-                                {
-                                    categories.map((category) => {
-                                        return <NavLink  to={"/blogCategory/"+category?.id} className="flex my-[10px] align-middle  flex-col">{category?.name}</NavLink>
-                                    })
-                                }
-                            </li>
+
 
                         </ul>
                     </div>
@@ -57,23 +50,11 @@ const LayOut = (props) => {
                     <ul className=" menu flexImportant flex align-middle menu-horizontal px-1 z-[1] ">
                         <NavLink to={"/"} className="flex mx-[10px] flex-col">Home</NavLink>
                         {
-                            categories.map((category) => {
-                                return <NavLink to={"/blogCategory/"+category?.id} className="flex mx-[20px]">{category?.name}</NavLink>
+                            categories.map((category, index) => {
+                                return <li key={index.toString()}><NavLink  to={"/blogCategory/"+category?.id} className="flex mx-[20px]">{category?.name}</NavLink></li>
                             })
                         }
-                        <li>
-                            <details>
-                                <summary className="cursor-pointer">Categories</summary>
-                                <ul className="flex p-[20px] flex-wrap z-[1] ">
-                                    {
-                                        categories.map((category) => {
-                                            return <NavLink to={"/blogCategory/"+category?.id}  className="flex flex-col flex-wrap my-[10px]   ">{category?.name}</NavLink>
-                                        })
-                                    }
 
-                                </ul>
-                            </details>
-                        </li>
 
                     </ul>
                 </div>

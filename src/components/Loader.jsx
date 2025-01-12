@@ -3,56 +3,7 @@ const Loader = () => {
         <div className="container mx-auto">
             <div className="flex items-center justify-center h-screen gap-10">
 
-                <div className="flex w-52 flex-col gap-4">
-                    <div className="flex items-center gap-4">
-                        <div className="skeleton h-16 w-16 shrink-0 rounded-full"></div>
-                        <div className="flex flex-col gap-4">
-                            <div className="skeleton h-4 w-20"></div>
-                            <div className="skeleton h-4 w-28"></div>
-                        </div>
-                    </div>
-                    <div className="skeleton h-32 w-full"></div>
-                </div>
-                <div className="flex w-52 flex-col gap-4">
-                    <div className="flex items-center gap-4">
-                        <div className="skeleton h-16 w-16 shrink-0 rounded-full"></div>
-                        <div className="flex flex-col gap-4">
-                            <div className="skeleton h-4 w-20"></div>
-                            <div className="skeleton h-4 w-28"></div>
-                        </div>
-                    </div>
-                    <div className="skeleton h-32 w-full"></div>
-                </div>
-                <div className="flex w-52 flex-col gap-4">
-                    <div className="flex items-center gap-4">
-                        <div className="skeleton h-16 w-16 shrink-0 rounded-full"></div>
-                        <div className="flex flex-col gap-4">
-                            <div className="skeleton h-4 w-20"></div>
-                            <div className="skeleton h-4 w-28"></div>
-                        </div>
-                    </div>
-                    <div className="skeleton h-32 w-full"></div>
-                </div>
-                <div className="flex w-52 flex-col gap-4">
-                    <div className="flex items-center gap-4">
-                        <div className="skeleton h-16 w-16 shrink-0 rounded-full"></div>
-                        <div className="flex flex-col gap-4">
-                            <div className="skeleton h-4 w-20"></div>
-                            <div className="skeleton h-4 w-28"></div>
-                        </div>
-                    </div>
-                    <div className="skeleton h-32 w-full"></div>
-                </div>
-                <div className="flex w-52 flex-col gap-4">
-                    <div className="flex items-center gap-4">
-                        <div className="skeleton h-16 w-16 shrink-0 rounded-full"></div>
-                        <div className="flex flex-col gap-4">
-                            <div className="skeleton h-4 w-20"></div>
-                            <div className="skeleton h-4 w-28"></div>
-                        </div>
-                    </div>
-                    <div className="skeleton h-32 w-full"></div>
-                </div>
+                <span className="loading loading-ring loading-lg"></span>
             </div>
         </div>
     );

@@ -25,3 +25,15 @@ export async function blogListItem (){
     }
 
 }
+
+export async function postByCategory (id){
+    let res =  await axios.get(`${baseURL}/post-list/${id}` , {})
+
+
+    if (res.status === 200) {
+        return res.data
+    }else {
+        return []
+    }
+
+}
