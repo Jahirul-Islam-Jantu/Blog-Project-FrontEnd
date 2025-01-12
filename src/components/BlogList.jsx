@@ -9,7 +9,7 @@ const BlogList = ({list}) => {
                     {
                         list.map((item) => {
                             return (
-                                <Link to={"/"} key={item?.id} className="card w-full glass">
+                                <Link to={"/blogDetails/"+item?.["id"]} key={item?.id} className="card w-full glass">
                                     <figure>
                                         <img src={item.img} alt="Card"/>
                                     </figure>

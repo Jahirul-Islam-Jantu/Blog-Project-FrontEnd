@@ -37,3 +37,13 @@ export async function postByCategory (id){
     }
 
 }
+
+export async function detailsPostItem (id){
+    let res =  await axios.get(`${baseURL}/post-details/${id}` , {})
+
+    if (res.status === 200) {
+        return res.data
+    }else {
+        return []
+    }
+}

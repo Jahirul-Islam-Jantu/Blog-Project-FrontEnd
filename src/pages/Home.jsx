@@ -19,9 +19,6 @@ const Home = () => {
     return (
         <LayOut>
             {list === null ? <Loader/>:<BlogList list={list}/>}
-
-
-
         </LayOut>
     );
 };
